@@ -3,11 +3,11 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 # The gps config appropriate for this device
 $(call inherit-product, device/common/gps/gps_us_supl.mk)
 
-$(call inherit-product-if-exists, vendor/blu/advanced4l/advanced4l-vendor.mk)
+$(call inherit-product-if-exists, vendor/blu/advance4l/advance4l-vendor.mk)
 
-DEVICE_PACKAGE_OVERLAYS += device/blu/advanced4l/overlay
+DEVICE_PACKAGE_OVERLAYS += device/blu/advance4l/overlay
 
-LOCAL_PATH := device/blu/advanced4l
+LOCAL_PATH := device/blu/advance4l
 ifeq ($(TARGET_PREBUILT_KERNEL),)
 	LOCAL_KERNEL := $(LOCAL_PATH)/kernel
 else
@@ -20,8 +20,8 @@ PRODUCT_COPY_FILES += \
 $(call inherit-product, build/target/product/full.mk)
 
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
-PRODUCT_NAME := full_advanced4l
-PRODUCT_DEVICE := advanced4l
+PRODUCT_NAME := full_advance4l
+PRODUCT_DEVICE := advance4l
 
 ADDITIONAL_DEFAULT_PROPERTIES += ro.secure=0 \
 ro.allow.mock.location=1 \

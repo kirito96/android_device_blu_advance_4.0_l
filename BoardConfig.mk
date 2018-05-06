@@ -1,7 +1,7 @@
 USE_CAMERA_STUB := true
 
 # inherit from the proprietary version
--include vendor/blu/advanced4l/BoardConfigVendor.mk
+-include vendor/blu/advance4l/BoardConfigVendor.mk
 
 TARGET_ARCH := arm
 TARGET_NO_BOOTLOADER := true
@@ -13,7 +13,7 @@ TARGET_CPU_VARIANT := cortex-a7
 TARGET_CPU_SMP := true
 ARCH_ARM_HAVE_TLS_REGISTER := true
 
-TARGET_BOOTLOADER_BOARD_NAME := advanced4l
+TARGET_BOOTLOADER_BOARD_NAME := advance4l
 
 BOARD_KERNEL_CMDLINE :=
 BOARD_KERNEL_BASE := 0x10000000
@@ -26,13 +26,13 @@ BOARD_SYSTEMIMAGE_PARTITION_SIZE := 681574400
 BOARD_USERDATAIMAGE_PARTITION_SIZE := 1073741824
 BOARD_FLASH_BLOCK_SIZE := 512
 
-TARGET_PREBUILT_KERNEL := device/blu/advanced4l/kernel
+TARGET_PREBUILT_KERNEL := device/blu/advance4l/kernel
 BOARD_HAS_NO_SELECT_BUTTON := true
 
-TARGET_RECOVERY_FSTAB := device/blu/advanced4l/recovery/recovery.fstab
+TARGET_RECOVERY_FSTAB := device/blu/advance4l/recovery/recovery.fstab
 BOARD_CUSTOM_BOOTIMG := true
 BOARD_CUSTOM_MKBOOTIMG := $(HOST_OUT_EXECUTABLES)/mtkbootimg$(HOST_EXECUTABLE_SUFFIX)
-BOARD_CUSTOM_BOOTIMG_MK := device/blu/advanced4l/bootimg.mk
+BOARD_CUSTOM_BOOTIMG_MK := device/blu/advance4l/bootimg.mk
 BOARD_MKBOOTIMG_ARGS := --mtk 1
 
 # TWRP
@@ -50,3 +50,8 @@ DEVICE_RESOLUTION := 480x854
 TW_BRIGHTNESS_PATH := /sys/class/leds/lcd-backlight/brightness
 TW_MAX_BRIGHTNESS := 255
 TW_CUSTOM_CPU_TEMP_PATH := /sys/devices/virtual/thermal/thermal_zone1/temp
+
+BOARD_HAS_NO_REAL_SDCARD := true
+TW_EXCLUDE_MTP := true
+TW_NO_USB_STORAGE := true
+TW_NO_REBOOT_BOOTLOADER := true
